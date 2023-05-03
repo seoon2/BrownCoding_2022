@@ -59,10 +59,10 @@ public class MoveChecker {
             int d_col = cell.getColumn();
 
             while (d_col != move.getCell().getColumn() || d_row != move.getCell().getRow()) {
-                //this.cells[d_row][d_col].setValue(colour);
+                this.cells[d_row][d_col].setValue(colour);
                 d_row += dir[0];
                 d_col += dir[1];
-                this.cells[d_row][d_col].setValue(colour);
+
             }
         }
     }
@@ -94,7 +94,7 @@ public class MoveChecker {
      * @param colour - new colour
      */
     public void colourPieces(ArrayList<Cell> cells, CellStatus colour) {
-        for (int i = 0; i < cells.size() - 1; i++){
+        for (int i = 0; i < cells.size(); i++){
             cells.get(i).setValue(colour);
         }
     }
