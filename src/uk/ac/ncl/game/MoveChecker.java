@@ -36,9 +36,8 @@ public class MoveChecker {
         ArrayList<Cell> potentialMoves = findPotentialMoves(cellStatus);
         Cell opponentsMove = null;
         for (Cell cell : potentialMoves){
-                opponentsMove = opponentsMove == null
-                        //&& > ||
-                        || cell.getMove().getScore() > opponentsMove.getMove().getScore()
+                opponentsMove = ( opponentsMove == null
+                        || cell.getMove().getScore() > opponentsMove.getMove().getScore() )
                         ? cell
                         : opponentsMove;
         }
@@ -136,5 +135,11 @@ public class MoveChecker {
         for (Cell cell : grayCells) {
             cell.setMove(cell.getMove());
         }
+        /*
+        if (grayCells == null)
+            return;
+        for (Cell cell : grayCells) {
+            cell.setMove(null);
+        }*/
     }
 }
