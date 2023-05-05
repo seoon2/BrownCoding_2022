@@ -131,6 +131,7 @@ public class Cell {
                         if (cell.getValue() == colour) {
                             score += temp_score;
                             moves.add(new DirectedMove(cell, dir));
+                            break;
                         }
                     } else {
                         break;
