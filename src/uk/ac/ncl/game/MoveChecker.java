@@ -130,10 +130,10 @@ public class MoveChecker {
      * @param grayCells - pieces with valid moves
      */
     public void removeMoves(ArrayList<Cell> grayCells){
-        if (grayCells != null){
-             for (Cell cell : grayCells) {
-                cell.setMove(null);
-            }
+        if (grayCells == null)
+            return;
+        for (Cell cell : grayCells) {
+            cell.setMove(null);
         }
     }
 }
